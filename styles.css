@@ -34,6 +34,7 @@ body{
 }
 .weather-container {
     display: flex;
+
 }
 #icon {
    width: 100px;
