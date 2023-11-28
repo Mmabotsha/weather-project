@@ -1,17 +1,16 @@
 function reloadWeather(response) {
-    let date =new Date(response.data.time * 1000);
+    
     let timeElement =document.querySelector("#time");
     let cityElement =document.querySelector("#weather-city");
-    let iconElement = document.querySelector("#icon");
     let temperatureElement = document.querySelector("#temperature");
     let temperature = response.data.temperature.current;
     let descriptionElement =document.querySelector("#description");
     let humidityElement =document.querySelector("#humidity");
     let windSpeedElement = document.querySelector("#wind-speed");
+    let date =new Date(response.data.time* 1000);
 
-    timeElement.innerHTML = formatDate(date);
     cityElement.innerHTML = response.data.city;
-    iconElement.innerHTML = `<img scr="${response.data.condition.icon_url}" class="weather-icon" />`;
+    timeElement.innerHTML = formatDate(date);
     temperatureElement.innerHTML = Math.round(temperature);
     descriptionElement.innerHTML =response.data.condition.description;
     humidityElement.innerHTML =`${response.data.temperature.humidity}%`;
