@@ -1,0 +1,49 @@
+body{
+    font-family: 'Nunito Sans', sans-serif;
+}
+.weather-app{
+    background: radial-gradient(666px at 0.4% 48%, rgb(202, 204, 227) 0%, rgb(89, 89, 99) 97.5%);
+    margin: 100px auto;
+    max-height: 900px;
+    padding: 30px;   
+}
+
+.search-form-input {
+    border: none;
+    border-radius: 6px;
+    width: 80%;
+    font-size: 20px;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.search-form-button {
+   background:darkgray ;
+   padding: 15px 30px;
+   border: none;
+   margin-top: 0px ;
+   color: aliceblue;
+   border-radius: 6px;
+   font-size: 16px;
+   
+}
+.weather-city {
+    font-family: 'Fira Sans', sans-serif;
+    text-align:left;
+}
+.weather-container {
+    display: flex;
+}
+#icon {
+   width: 88px;
+   height: 88px;
+}
+.weather-temperature {
+    font-size: 78px;
+    line-height: 78px;
+}
+.weather-unit {
+    margin-top: 6px;
+    font-size: 15px;
+}
