@@ -3,11 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans&family=Nunito+Sans:opsz@6..12&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
     <title>Weather Project</title>
 </head>
 <body>
-    <div>
+    <div class="weather-app">
         <header>
             <form class="search-form" id="search-form">
                 <input type="search"
@@ -18,14 +22,11 @@
                 />
                 <br />
                 <input type="submit"
-                value="search"
+                value="Search"
                 class="search-form-button">
              </form>
             <div class="weather-data">
-                <h1 id="time">
-                    <br />
-                    <span class="weather-city" id="city"> 
-                    </span>
+                <h1 class="weather-city" id="weather-city">
                 </h1>
             </div>
             
@@ -33,16 +34,18 @@
 
         <main>
             <div class="weather-container">
-                <div id="icon"></div>
+                <div id="icon">⛅</div>
                 <div class="weather-temperature" id="temperature"></div>
                 <div class="weather-unit">°C</div>
+            
              
               <p class="weather details">
+                <span id="time"></span>,
                 <span id="description"></span>
                 <br />
                 Humidity: <strong id="humidity"></strong>
                 <br />
-                Wind: <span id="wind speed"></span>
+                Wind: <span id="wind-speed"></span>
               </p>
             </div>   
         </main>

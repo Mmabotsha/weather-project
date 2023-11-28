@@ -1,7 +1,7 @@
 function reloadWeather(response) {
     let date =new Date(response.data.time * 1000);
     let timeElement =document.querySelector("#time");
-    let cityElement =document.querySelector("#city");
+    let cityElement =document.querySelector("#weather-city");
     let iconElement = document.querySelector("#icon");
     let temperatureElement = document.querySelector("#temperature");
     let temperature = response.data.temperature.current;
@@ -11,7 +11,7 @@ function reloadWeather(response) {
 
     timeElement.innerHTML = formatDate(date);
     cityElement.innerHTML = response.data.city;
-    iconElement.innerHTML = `<img scr="${response.data.condition.icon_url}" />`;
+    iconElement.innerHTML = `<img scr="${response.data.condition.icon_url}" class="weather-icon" />`;
     temperatureElement.innerHTML = Math.round(temperature);
     descriptionElement.innerHTML =response.data.condition.description;
     humidityElement.innerHTML =`${response.data.temperature.humidity}%`;
@@ -19,7 +19,7 @@ function reloadWeather(response) {
 
 }
 
-function formatDate(date){
+function formatDate(date) {
     let days = [ 
         "Sunday",
          "Monday", 
@@ -29,6 +29,7 @@ function formatDate(date){
          "Friday",
           "Saturday"
         ];
+
     let day = days[date.getDay];
 
     let hours = date.getMinutes();
@@ -53,6 +54,6 @@ function handleSearchSubmit(event) {
     searchCity(searchInput.value);
 }
 let searchForm = document.querySelector("#search-form");
-searchForm.addEventListener("submit" ,handleSearchSubmit);
+searchForm.addEventListener("submit",handleSearchSubmit);
 
 searchCity("Paris");
